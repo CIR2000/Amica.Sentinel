@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sentinel.NET")]
+[assembly: AssemblyTitle("SentinelClient.NET")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CIR 2000")]
-[assembly: AssemblyProduct("Sentinel.NET")]
+[assembly: AssemblyProduct("SentinelClient.NET")]
 [assembly: AssemblyCopyright("Copyright © CIR 2000 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
