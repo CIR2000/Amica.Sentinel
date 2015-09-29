@@ -12,8 +12,6 @@ namespace Sentinel
         public async Task<Token> GetToken(bool force=false)
         {
             Validate();
-
-            // TODO if ApplicationName is null then default it to ClientId (used for caching)
             
             // TODO is a token cached for Username/ClientId combo?
             
@@ -40,7 +38,6 @@ namespace Sentinel
         public string Password { get; set; }
         public string ClientId { get; set; }
         public string BaseAddress { get; set; }
-        public string ApplicationName { get; set; }
         public string GrantType { get { return "password"; } }
         public string TokenUrl
         {
