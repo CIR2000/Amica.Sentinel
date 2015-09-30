@@ -98,6 +98,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Eve.NET\Eve.NET.Net4\Eve.NET.Net4.csproj">
+      <Project>{d405d3c5-de1c-4db1-b920-2e7cd7f450af}</Project>
+      <Name>Eve.NET.Net4</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sentinel\Sentinel.csproj">
       <Project>{c53bffc2-cc4c-4860-8c8c-ae44adf824b5}</Project>
       <Name>Sentinel</Name>

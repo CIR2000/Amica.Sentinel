@@ -5,14 +5,21 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Eve.Authenticators;
 
+// ReSharper disable once CheckNamespace
 namespace Sentinel
 {
     public class SentinelClient
     {
         private string _tokenUrl = "/oauth/token";
 
-        public async Task<Token> GetToken(bool ignoreCache=false)
+        public async Task<BearerAuthenticator> GetBearerAuthenticator(bool ignoreCache = false)
+        {
+            var token = await GetBearerToken(ignoreCache);
+            return token == null ? null : new BearerAuthenticator(token.AccessToken);
+        }
+        public async Task<Token> GetBearerToken(bool ignoreCache=false)
         {
             Validate();
             
@@ -26,7 +33,8 @@ namespace Sentinel
                 return null;
 
             var json = await HttpResponse.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<Token>(json);
+            Token = JsonConvert.DeserializeObject<Token>(json);
+            return Token;
         }
 
         private async Task<HttpResponseMessage> PerformTokenRequest()
@@ -68,6 +76,7 @@ namespace Sentinel
         public Uri BaseAddress { get; set; }
         public HttpResponseMessage HttpResponse { get; set; }
         public string GrantType { get { return "password"; } }
+        public Token Token { get; internal set; }
         public string TokenUrl
         {
             get { return _tokenUrl; }

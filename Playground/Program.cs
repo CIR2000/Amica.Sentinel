@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Sentinel;
@@ -21,7 +23,7 @@ namespace Playground
             }
         }
 
-        static async Task Test()
+        private static async Task Test()
         {
             var r = new SentinelClient
             {
@@ -39,8 +41,19 @@ namespace Playground
                 Username = Environment.GetEnvironmentVariable("SentinelUsername"),
                 Password = Environment.GetEnvironmentVariable("SentinelPassword")
             };
-            var t = await r.GetToken();
+            var t = await r.GetBearerAuthenticator();
             Console.WriteLine(r.HttpResponse.StatusCode);
+
+        //    using (var client = new HttpClient {BaseAddress = new Uri("http://10.0.2.2:5000/")})
+        //    {
+        //        client.DefaultRequestHeaders.Accept.Clear();
+        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //        client.DefaultRequestHeaders.Authorization = t.AuthenticationHeader();
+
+
+        //        var res = await client.GetAsync("/countries");
+
+        //    }
         }
     }
 }
