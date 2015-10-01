@@ -102,9 +102,9 @@
       <Project>{d405d3c5-de1c-4db1-b920-2e7cd7f450af}</Project>
       <Name>Eve.NET.Net4</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sentinel\Sentinel.csproj">
-      <Project>{c53bffc2-cc4c-4860-8c8c-ae44adf824b5}</Project>
-      <Name>Sentinel</Name>
+    <ProjectReference Include="..\Sentinel.Net4\Sentinel.Net4.csproj">
+      <Project>{69b58df3-d1f5-40fe-8c1e-f133b7b3b6b6}</Project>
+      <Name>Sentinel.Net4</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

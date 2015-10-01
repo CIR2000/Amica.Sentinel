@@ -7,7 +7,6 @@ using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Eve.Authenticators;
 
-// ReSharper disable once CheckNamespace
 namespace Sentinel
 {
     public class SentinelClient
@@ -34,6 +33,7 @@ namespace Sentinel
 
             var json = await HttpResponse.Content.ReadAsStringAsync();
             Token = JsonConvert.DeserializeObject<Token>(json);
+            Token.Username = Username;
             return Token;
         }
 
