@@ -11,8 +11,6 @@ namespace Sentinel
 {
     public class SentinelClient
     {
-        private string _tokenUrl = "/oauth/token";
-
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool ignoreCache = false)
         {
             var token = await GetBearerToken(ignoreCache);
@@ -21,12 +19,14 @@ namespace Sentinel
         public async Task<Token> GetBearerToken(bool ignoreCache=false)
         {
             Validate();
-            
-            // TODO is a token cached for Username/ClientId combo?
-            
-            // TODO if not cached or ignore_cache, perform token request to remote service, store it to cache and then return it.
 
-            // else, retrieve token from cache and return it.
+	    // TODO support for handling a different cache type (maybe get cache instance passwed as a proprierty)
+	    var cache = new Cache.SqLiteTokenCache();
+            if (!ignoreCache) {
+                Token = await cache.GetAsync(Username);
+                if (Token != null) return Token;
+            }
+            
             HttpResponse = await PerformTokenRequest();
             if (HttpResponse.StatusCode != HttpStatusCode.OK)
                 return null;
@@ -34,6 +34,9 @@ namespace Sentinel
             var json = await HttpResponse.Content.ReadAsStringAsync();
             Token = JsonConvert.DeserializeObject<Token>(json);
             Token.Username = Username;
+
+	    await cache.UpsertAsync(Token);
+
             return Token;
         }
 
@@ -75,12 +78,8 @@ namespace Sentinel
         public string ClientId { get; set; }
         public Uri BaseAddress { get; set; }
         public HttpResponseMessage HttpResponse { get; set; }
-        public string GrantType { get { return "password"; } }
+        public string GrantType => "password";
         public Token Token { get; internal set; }
-        public string TokenUrl
-        {
-            get { return _tokenUrl; }
-            set { _tokenUrl = value; }
-        }
+        public string TokenUrl { get; set; } = "/oauth/token";
     }
 }

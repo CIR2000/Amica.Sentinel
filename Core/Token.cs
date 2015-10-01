@@ -20,16 +20,11 @@ namespace Sentinel
         [JsonProperty("token_type")]
         public string TokenType { get; set; }
         [JsonProperty("expires_in")]
-        // ReSharper disable once UnusedAutoPropertyAccessor.Local
-        private int ExpiresIn { get; set; }
-        private DateTime CreatedAt { get; }
-        public DateTime ExpiresAt {
-            get { return CreatedAt.AddSeconds(ExpiresIn); }}
+        public int ExpiresIn { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime ExpiresAt => CreatedAt.AddSeconds(ExpiresIn);
 
-        public bool Expired
-        {
-            get { return DateTime.Now > ExpiresAt; }
-        }
+        public bool Expired => ExpiresAt <= DateTime.Now;
         public string Scope { get; set; }
     }
 }
