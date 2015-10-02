@@ -11,18 +11,18 @@ namespace Sentinel
 {
     public class SentinelClient
     {
-        public async Task<BearerAuthenticator> GetBearerAuthenticator(bool ignoreCache = false)
+        public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
-            var token = await GetBearerToken(ignoreCache);
+            var token = await GetBearerToken(forceRefresh);
             return token == null ? null : new BearerAuthenticator(token.AccessToken);
         }
-        public async Task<Token> GetBearerToken(bool ignoreCache=false)
+        public async Task<Token> GetBearerToken(bool forceRefresh=false)
         {
             Validate();
 
 	    // TODO support for handling a different cache type (maybe get cache instance passwed as a proprierty)
 	    var cache = new Cache.SqLiteTokenCache();
-            if (!ignoreCache) {
+            if (!forceRefresh) {
                 Token = await cache.FetchAsync(Username);
                 if (Token != null) return Token;
             }
