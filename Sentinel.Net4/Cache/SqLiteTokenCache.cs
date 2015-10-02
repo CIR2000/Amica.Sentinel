@@ -37,7 +37,8 @@ namespace Sentinel.Cache
         {
             get
             {
-                const string sqliteFilename = "sentinel.db3";
+                const string cacheFolder = "SentinelCache";
+                const string sqliteFilename = "sentinelcache.db3";
 
 		// TODO set the appropriate path depending on the client type
 		#if __IOS__
@@ -50,7 +51,9 @@ namespace Sentinel.Cache
 			var path = Path.Combine(documentsPath, sqliteFilename);
 		    #else
 			// Windows
-			var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), sqliteFilename);
+			var dir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), cacheFolder);
+			Directory.CreateDirectory(dir);
+			var path = Path.Combine(dir, sqliteFilename);
 		    #endif
 		#endif
                 return path;
