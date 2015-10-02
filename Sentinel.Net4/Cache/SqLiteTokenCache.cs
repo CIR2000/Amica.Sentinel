@@ -6,6 +6,8 @@ using SQLite;
 // ReSharper disable once CheckNamespace
 namespace Sentinel.Cache
 {
+    // TODO consider adding encryption for the token fields.
+
     class SqLiteTokenCache : ITokenCache
     {
         private static readonly SQLiteAsyncConnection Connection;
@@ -40,7 +42,6 @@ namespace Sentinel.Cache
                 const string cacheFolder = "SentinelCache";
                 const string sqliteFilename = "sentinelcache.db3";
 
-		// TODO set the appropriate path depending on the client type
 		#if __IOS__
 		    string documentsPath = Environment.GetFolderPath (Environment.SpecialFolder.Personal); // Documents folder
 		    string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library folder
