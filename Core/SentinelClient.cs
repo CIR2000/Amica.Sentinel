@@ -23,7 +23,7 @@ namespace Sentinel
 	    // TODO support for handling a different cache type (maybe get cache instance passwed as a proprierty)
 	    var cache = new Cache.SqLiteTokenCache();
             if (!ignoreCache) {
-                Token = await cache.GetAsync(Username);
+                Token = await cache.FetchAsync(Username);
                 if (Token != null) return Token;
             }
             

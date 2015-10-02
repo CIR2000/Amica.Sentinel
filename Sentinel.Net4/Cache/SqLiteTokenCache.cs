@@ -16,7 +16,7 @@ namespace Sentinel.Cache
             Connection.CreateTableAsync<Token>();
         }
 
-        public async Task<Token> GetAsync(string username)
+        public async Task<Token> FetchAsync(string username)
         {
             var token =  await Connection.FindAsync<Token>(username);
             if (token != null && !token.Expired)

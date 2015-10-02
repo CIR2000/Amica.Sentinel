@@ -51,7 +51,7 @@ namespace Playground
         //        client.DefaultRequestHeaders.Authorization = t.AuthenticationHeader();
 
 
-        //        var res = await client.GetAsync("/countries");
+        //        var res = await client.FetchAsync("/countries");
 
         //    }
         }
