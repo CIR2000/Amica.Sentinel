@@ -6,11 +6,16 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Eve.Authenticators;
+using Sentinel.Cache;
 
 namespace Sentinel
 {
     public class SentinelClient
     {
+        public SentinelClient()
+        {
+            Cache = new SqLiteTokenCache();
+        }
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
             var token = await GetBearerToken(forceRefresh);
@@ -21,9 +26,8 @@ namespace Sentinel
             Validate();
 
 	    // TODO support for handling a different cache type (maybe get cache instance passwed as a proprierty)
-	    var cache = new Cache.SqLiteTokenCache();
             if (!forceRefresh) {
-                Token = await cache.FetchAsync(Username);
+                Token = await Cache.FetchAsync(Username);
                 if (Token != null) return Token;
             }
             
@@ -35,7 +39,7 @@ namespace Sentinel
             Token = JsonConvert.DeserializeObject<Token>(json);
             Token.Username = Username;
 
-	    await cache.UpsertAsync(Token);
+	    await Cache.UpsertAsync(Token);
 
             return Token;
         }
@@ -81,5 +85,6 @@ namespace Sentinel
         public string GrantType => "password";
         public Token Token { get; internal set; }
         public string TokenUrl { get; set; } = "/oauth/token";
+	public ITokenCache Cache { get; set; }
     }
 }
