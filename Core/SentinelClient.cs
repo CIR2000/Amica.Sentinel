@@ -15,6 +15,9 @@ namespace Sentinel
         public SentinelClient()
         {
             Cache = new SqLiteTokenCache();
+
+	    // TODO set BaseAddress using the appropriate DiscoveryService class method/property.
+            BaseAddress = new Uri("https://10.0.2.2:8000");
         }
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
@@ -80,7 +83,7 @@ namespace Sentinel
         public string Username { get; set; }
         public string Password { get; set; }
         public string ClientId { get; set; }
-        public Uri BaseAddress { get; set; }
+        public Uri BaseAddress { get; private set; }
         public HttpResponseMessage HttpResponse { get; set; }
         public string GrantType => "password";
         public Token Token { get; internal set; }

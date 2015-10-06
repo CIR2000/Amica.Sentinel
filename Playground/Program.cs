@@ -31,10 +31,6 @@ namespace Playground
                 // need Fiddler running with Decrypt HTTPS option active, 
                 // see http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS
                 
-                // This is a local Flask-Sentinel server running on OSX.
-                // We need this url to get through VBOX sandbox.
-                BaseAddress = new Uri("https://10.0.2.2:5000/"),
-
                 // these are test values only valid on my local machine.
                 // have fun using them on a live system.
                 ClientId = Environment.GetEnvironmentVariable("SentinelClientId"),
