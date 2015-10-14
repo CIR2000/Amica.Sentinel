@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using Eve.Authenticators;
-using Sentinel.Cache;
+using Amica.vNext;
 
 namespace Sentinel
 {
@@ -14,7 +14,7 @@ namespace Sentinel
     {
         public SentinelClient()
         {
-            Cache = new SqLiteTokenCache();
+            Cache = new SqliteObjectCache() {ApplicationName = "SentinelClient"};
 
 	    // TODO set BaseAddress using the appropriate DiscoveryService class method/property.
             BaseAddress = new Uri("https://10.0.2.2:8000");
@@ -28,27 +28,19 @@ namespace Sentinel
         {
             Validate();
 
-	    // TODO support for handling a different cache type (maybe get cache instance passwed as a proprierty)
+	    HttpResponse = null;
+	    Token = null;
+
             if (!forceRefresh) {
-                Token = await Cache.FetchAsync(Username);
-                if (Token != null) return Token;
+                try
+                {
+                    Token = await Cache.Get<Token>(Username);
+                    if (!Token.Expired)
+                        return Token;
+                }
+                catch (KeyNotFoundException) { }
             }
             
-            HttpResponse = await PerformTokenRequest();
-            if (HttpResponse.StatusCode != HttpStatusCode.OK)
-                return null;
-
-            var json = await HttpResponse.Content.ReadAsStringAsync();
-            Token = JsonConvert.DeserializeObject<Token>(json);
-            Token.Username = Username;
-
-	    await Cache.UpsertAsync(Token);
-
-            return Token;
-        }
-
-        private async Task<HttpResponseMessage> PerformTokenRequest()
-        {
             using (var client = new HttpClient {BaseAddress = BaseAddress})
             {
                 client.DefaultRequestHeaders.Accept.Clear ();
@@ -61,33 +53,38 @@ namespace Sentinel
                     new KeyValuePair<string, string>("grant_type", GrantType)
                 });
 
-                var r = await client.PostAsync(TokenUrl, content).ConfigureAwait(false);
-                return r;
-            }
+                HttpResponse = await client.PostAsync(TokenUrl, content).ConfigureAwait(false);
+                if (HttpResponse.StatusCode != HttpStatusCode.OK) return Token;
 
+                var json = await HttpResponse.Content.ReadAsStringAsync();
+                Token = JsonConvert.DeserializeObject<Token>(json);
+                Token.Username = Username;
+
+                await Cache.Insert(Username, Token, Token.ExpiresAt);
+            }
+            return Token;
         }
+
         private void Validate()
         {
-            if (BaseAddress == null)
-                throw new ArgumentNullException("BaseAddress");
             if (TokenUrl == null)
-                throw new ArgumentNullException("TokenUrl");
+                throw new ArgumentNullException(nameof(TokenUrl));
             if (Username == null)
-                throw new ArgumentNullException("Username");
+                throw new ArgumentNullException(nameof(Username));
             if (Password == null)
-                throw new ArgumentNullException("Password");
+                throw new ArgumentNullException(nameof(Password));
             if (ClientId == null)
-                throw new ArgumentNullException("ClientId");
+                throw new ArgumentNullException(nameof(ClientId));
         }
 
         public string Username { get; set; }
         public string Password { get; set; }
         public string ClientId { get; set; }
-        public Uri BaseAddress { get; private set; }
+        public Uri BaseAddress { get; }
         public HttpResponseMessage HttpResponse { get; set; }
         public string GrantType => "password";
         public Token Token { get; internal set; }
         public string TokenUrl { get; set; } = "/oauth/token";
-	public ITokenCache Cache { get; set; }
+	public SqliteObjectCache Cache { get; set; }
     }
 }

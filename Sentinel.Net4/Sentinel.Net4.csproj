@@ -92,16 +92,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Core\Cache\ITokenCache.cs">
-      <Link>Cache\ITokenCache.cs</Link>
-    </Compile>
     <Compile Include="..\Core\SentinelClient.cs">
       <Link>SentinelClient.cs</Link>
     </Compile>
     <Compile Include="..\Core\Token.cs">
       <Link>Token.cs</Link>
     </Compile>
-    <Compile Include="Cache\SqLiteTokenCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
@@ -112,6 +108,10 @@
     <None Include="Sentinel.snk" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Amica.vNext\Amica.vNext.SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj">
+      <Project>{5a320348-7ae0-421a-b3ec-25ff8fed4243}</Project>
+      <Name>SimpleCache.Net4</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Eve.NET\Eve.NET.Net4\Eve.NET.Net4.csproj">
       <Project>{d405d3c5-de1c-4db1-b920-2e7cd7f450af}</Project>
       <Name>Eve.NET.Net4</Name>

@@ -5,9 +5,11 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{06452EC6-49E5-44B4-860B-5B2FA527D49D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve.NET.Net4", "..\Eve.NET\Eve.NET.Net4\Eve.NET.Net4.csproj", "{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel.Net4", "Sentinel.Net4\Sentinel.Net4.csproj", "{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.Net4", "..\Amica.vNext\Amica.vNext.SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj", "{5A320348-7AE0-421A-B3EC-25FF8FED4243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve.NET.Net4", "..\Eve.NET\Eve.NET.Net4\Eve.NET.Net4.csproj", "{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +21,18 @@ Global
 		{06452EC6-49E5-44B4-860B-5B2FA527D49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06452EC6-49E5-44B4-860B-5B2FA527D49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06452EC6-49E5-44B4-860B-5B2FA527D49D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D405D3C5-DE1C-4DB1-B920-2E7CD7F450AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

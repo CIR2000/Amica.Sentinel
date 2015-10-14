@@ -1,17 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
-using SQLite;
 
 namespace Sentinel
 {
-    [Table("Tokens")]
     public class Token
     {
         public Token()
         {
             CreatedAt = DateTime.Now;
         }
-        [PrimaryKey]
         public string Username { get; set; }
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }

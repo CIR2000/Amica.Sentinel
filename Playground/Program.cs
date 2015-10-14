@@ -38,18 +38,21 @@ namespace Playground
                 Password = Environment.GetEnvironmentVariable("SentinelPassword")
             };
             var t = await r.GetBearerAuthenticator();
-            Console.WriteLine(r.HttpResponse.StatusCode);
+	    
+            Console.WriteLine(r.Token);
+	    if (r.HttpResponse != null)
+                Console.WriteLine(r.HttpResponse.StatusCode);
 
-        //    using (var client = new HttpClient {BaseAddress = new Uri("http://10.0.2.2:5000/")})
-        //    {
-        //        client.DefaultRequestHeaders.Accept.Clear();
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        client.DefaultRequestHeaders.Authorization = t.AuthenticationHeader();
+            //using (var client = new HttpClient { BaseAddress = new Uri("http://10.0.2.2:9000/") })
+            //{
+            //    client.DefaultRequestHeaders.Accept.Clear();
+            //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            //    client.DefaultRequestHeaders.Authorization = t.AuthenticationHeader();
 
 
-        //        var res = await client.FetchAsync("/countries");
+            //    var res = await client.GetAsync("/countries");
 
-        //    }
+            //}
         }
     }
 }
