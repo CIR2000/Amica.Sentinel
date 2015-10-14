@@ -1,12 +1,7 @@
 ﻿using Nito.AsyncEx;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
-using Sentinel;
+using Amica.vNext;
 namespace Playground
 {
     class Program
@@ -25,7 +20,7 @@ namespace Playground
 
         private static async Task Test()
         {
-            var r = new Sentinel.Sentinel()
+            var r = new Sentinel()
             {
                 // Unless a valid SSL certificate is installed, we 
                 // need Fiddler running with Decrypt HTTPS option active, 

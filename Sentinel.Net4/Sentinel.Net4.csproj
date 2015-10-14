@@ -7,7 +7,7 @@
     <ProjectGuid>{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sentinel.Net4</RootNamespace>
+    <RootNamespace>Amica.vNext</RootNamespace>
     <AssemblyName>Sentinel.Net4</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
