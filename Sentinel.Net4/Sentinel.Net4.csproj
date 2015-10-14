@@ -92,11 +92,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Core\Token.cs">
+    <Compile Include="..\Sentinel.Core\Sentinel.cs">
+      <Link>Sentinel.cs</Link>
+    </Compile>
+    <Compile Include="..\Sentinel.Core\Token.cs">
       <Link>Token.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sentinel.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
   </ItemGroup>
@@ -106,13 +108,13 @@
     <None Include="Sentinel.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Amica.vNext\Amica.vNext.SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj">
+    <ProjectReference Include="..\..\..\Eve.NET\Eve.Net4\Eve.Net4.csproj">
+      <Project>{43aff1e2-c4dc-4737-963b-7ce26a559baf}</Project>
+      <Name>Eve.Net4</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj">
       <Project>{5a320348-7ae0-421a-b3ec-25ff8fed4243}</Project>
       <Name>SimpleCache.Net4</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Eve.NET\Eve.NET.Net4\Eve.NET.Net4.csproj">
-      <Project>{d405d3c5-de1c-4db1-b920-2e7cd7f450af}</Project>
-      <Name>Eve.NET.Net4</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

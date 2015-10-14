@@ -98,9 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Eve.NET\Eve.NET.Net4\Eve.NET.Net4.csproj">
-      <Project>{d405d3c5-de1c-4db1-b920-2e7cd7f450af}</Project>
-      <Name>Eve.NET.Net4</Name>
+    <ProjectReference Include="..\..\..\Eve.NET\Eve.Net4\Eve.Net4.csproj">
+      <Project>{43aff1e2-c4dc-4737-963b-7ce26a559baf}</Project>
+      <Name>Eve.Net4</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sentinel.Net4\Sentinel.Net4.csproj">
       <Project>{69b58df3-d1f5-40fe-8c1e-f133b7b3b6b6}</Project>
