@@ -79,7 +79,7 @@ namespace Amica.vNext
         public string Username { get; set; }
         public string Password { get; set; }
         public string ClientId { get; set; }
-        public Uri BaseAddress { get; }
+        public Uri BaseAddress { get; set; }
         public HttpResponseMessage HttpResponse { get; set; }
         public string GrantType => "password";
         public Token Token { get; internal set; }
