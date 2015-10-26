@@ -9,13 +9,14 @@ using Eve.Authenticators;
 
 namespace Amica.vNext
 {
+	// TODO IDisposable.
     public class Sentinel
     {
         public Sentinel()
         {
             Cache = new SqliteObjectCache() {ApplicationName = "Sentinel"};
 
-	    // TODO set BaseAddress using the appropriate DiscoveryService class method/property.
+			// TODO set BaseAddress using the appropriate DiscoveryService class method/property.
             BaseAddress = new Uri("https://10.0.2.2:8000");
         }
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
@@ -27,8 +28,8 @@ namespace Amica.vNext
         {
             Validate();
 
-	    HttpResponse = null;
-	    Token = null;
+			HttpResponse = null;
+			Token = null;
 
             if (!forceRefresh) {
                 try
