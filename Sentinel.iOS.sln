@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel.iOS", "Sentinel.iOS\Sentinel.iOS.csproj", "{3FF512A5-5EA5-4168-969B-6348DE6DF743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve.iOS", "..\..\Eve.NET\Eve.iOS\Eve.iOS.csproj", "{C932BF3E-ECDD-4A3C-9BA2-10D92A6C3143}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.iOS", "..\SimpleCache\SimpleCache.iOS\SimpleCache.iOS.csproj", "{AECC0B9C-1E6F-47ED-9A52-C572039A804E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FF512A5-5EA5-4168-969B-6348DE6DF743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF512A5-5EA5-4168-969B-6348DE6DF743}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF512A5-5EA5-4168-969B-6348DE6DF743}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF512A5-5EA5-4168-969B-6348DE6DF743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C932BF3E-ECDD-4A3C-9BA2-10D92A6C3143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C932BF3E-ECDD-4A3C-9BA2-10D92A6C3143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C932BF3E-ECDD-4A3C-9BA2-10D92A6C3143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C932BF3E-ECDD-4A3C-9BA2-10D92A6C3143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
