@@ -9,14 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel.Net4", "Sentinel.N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.Net4", "..\SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj", "{5A320348-7AE0-421A-B3EC-25FF8FED4243}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve.Net4", "..\..\Eve.NET\Eve.Net4\Eve.Net4.csproj", "{43AFF1E2-C4DC-4737-963B-7CE26A559BAF}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sentinel.Core", "Sentinel.Core\Sentinel.Core.shproj", "{7B92BD8D-8B7C-483C-9F8A-745CA34E8969}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve", "..\..\Eve.NET\Eve\Eve.csproj", "{DD88D007-AD10-470D-9C89-AA8EE39857D0}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Sentinel.Core\Sentinel.Core.projitems*{7b92bd8d-8b7c-483c-9f8a-745ca34e8969}*SharedItemsImports = 13
-		..\..\Eve.NET\Eve.Core\Eve.Core.projitems*{43aff1e2-c4dc-4737-963b-7ce26a559baf}*SharedItemsImports = 4
 		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{5a320348-7ae0-421a-b3ec-25ff8fed4243}*SharedItemsImports = 4
 		Sentinel.Core\Sentinel.Core.projitems*{69b58df3-d1f5-40fe-8c1e-f133b7b3b6b6}*SharedItemsImports = 4
 	EndGlobalSection
@@ -37,10 +36,10 @@ Global
 		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Release|Any CPU.Build.0 = Release|Any CPU
-		{43AFF1E2-C4DC-4737-963B-7CE26A559BAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{43AFF1E2-C4DC-4737-963B-7CE26A559BAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{43AFF1E2-C4DC-4737-963B-7CE26A559BAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{43AFF1E2-C4DC-4737-963B-7CE26A559BAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

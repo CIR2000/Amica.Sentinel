@@ -51,11 +51,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Eve.NET\Eve.iOS\Eve.iOS.csproj">
-      <Project>{c932bf3e-ecdd-4a3c-9ba2-10d92a6c3143}</Project>
-      <Name>Eve.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
+    <ProjectReference Include="..\..\..\Eve.NET\Eve\Eve.csproj">
+      <Project>{dd88d007-ad10-470d-9c89-aa8ee39857d0}</Project>
+      <Name>Eve</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SimpleCache\SimpleCache.iOS\SimpleCache.iOS.csproj">
       <Project>{aecc0b9c-1e6f-47ed-9a52-c572039a804e}</Project>

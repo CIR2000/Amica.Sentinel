@@ -100,9 +100,9 @@
     <None Include="Sentinel.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Eve.NET\Eve.Net4\Eve.Net4.csproj">
-      <Project>{43aff1e2-c4dc-4737-963b-7ce26a559baf}</Project>
-      <Name>Eve.Net4</Name>
+    <ProjectReference Include="..\..\..\Eve.NET\Eve\Eve.csproj">
+      <Project>{dd88d007-ad10-470d-9c89-aa8ee39857d0}</Project>
+      <Name>Eve</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj">
       <Project>{5a320348-7ae0-421a-b3ec-25ff8fed4243}</Project>
