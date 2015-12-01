@@ -10,7 +10,7 @@ using Eve.Authenticators;
 namespace Amica.vNext
 {
 	// TODO IDisposable.
-    public class Sentinel
+    public class Sentinel : ISentinel
     {
         public Sentinel()
         {

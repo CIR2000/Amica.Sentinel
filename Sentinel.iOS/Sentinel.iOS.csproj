@@ -61,6 +61,10 @@
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
+    <ProjectReference Include="..\..\SimpleCache\SimpleCache\SimpleCache.csproj">
+      <Project>{c4cbe63f-2eb6-404f-9cf2-44fbf42e35e2}</Project>
+      <Name>SimpleCache</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\Sentinel.Core\Sentinel.Core.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
