@@ -11,8 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ISentinel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Sentinel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SQLite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SQLiteAsync.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Token.cs" />
   </ItemGroup>
 </Project>

@@ -9,29 +9,29 @@ using Eve.Authenticators;
 
 namespace Amica.vNext
 {
-	// TODO IDisposable.
+
+    // TODO IDisposable.
     public class Sentinel : ISentinel
     {
         public Sentinel()
         {
-            Cache = new SqliteObjectCache() {ApplicationName = "Sentinel"};
-
-			// TODO set BaseAddress using the appropriate DiscoveryService class method/property.
             BaseAddress = new Uri("https://10.0.2.2:8000");
         }
+
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
             var token = await GetBearerToken(forceRefresh);
             return token == null ? null : new BearerAuthenticator(token.AccessToken);
         }
-        public async Task<Token> GetBearerToken(bool forceRefresh=false)
+        public async Task<Token> GetBearerToken(bool forceRefresh = false)
         {
             Validate();
 
-			HttpResponse = null;
-			Token = null;
+            HttpResponse = null;
+            Token = null;
 
-            if (!forceRefresh) {
+            if (!forceRefresh)
+            {
                 try
                 {
                     Token = await Cache.Get<Token>(Username);
@@ -40,13 +40,13 @@ namespace Amica.vNext
                 }
                 catch (KeyNotFoundException) { }
             }
-            
-            using (var client = new HttpClient {BaseAddress = BaseAddress})
-            {
-                client.DefaultRequestHeaders.Accept.Clear ();
-                client.DefaultRequestHeaders.Accept.Add (new MediaTypeWithQualityHeaderValue ("application/json"));
 
-                var content = new FormUrlEncodedContent(new [] {
+            using (var client = new HttpClient { BaseAddress = BaseAddress })
+            {
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                var content = new FormUrlEncodedContent(new[] {
                     new KeyValuePair<string, string>("client_id", ClientId),
                     new KeyValuePair<string, string>("password", Password),
                     new KeyValuePair<string, string>("username", Username),
@@ -67,6 +67,8 @@ namespace Amica.vNext
 
         private void Validate()
         {
+            if (Cache == null)
+                throw new ArgumentNullException(nameof(Cache));
             if (TokenUrl == null)
                 throw new ArgumentNullException(nameof(TokenUrl));
             if (Username == null)
@@ -85,6 +87,6 @@ namespace Amica.vNext
         public string GrantType => "password";
         public Token Token { get; internal set; }
         public string TokenUrl { get; set; } = "/oauth/token";
-	public SqliteObjectCache Cache { get; set; }
+        public SqliteObjectCacheBase Cache { get; set; }
     }
 }

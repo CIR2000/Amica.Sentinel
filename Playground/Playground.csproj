@@ -102,6 +102,10 @@
       <Project>{dd88d007-ad10-470d-9c89-aa8ee39857d0}</Project>
       <Name>Eve</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj">
+      <Project>{5a320348-7ae0-421a-b3ec-25ff8fed4243}</Project>
+      <Name>SimpleCache.Net4</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sentinel.Net4\Sentinel.Net4.csproj">
       <Project>{69b58df3-d1f5-40fe-8c1e-f133b7b3b6b6}</Project>
       <Name>Sentinel.Net4</Name>

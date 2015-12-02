@@ -30,7 +30,8 @@ namespace Playground
                 // have fun using them on a live system.
                 ClientId = Environment.GetEnvironmentVariable("SentinelClientId"),
                 Username = Environment.GetEnvironmentVariable("SentinelUsername"),
-                Password = Environment.GetEnvironmentVariable("SentinelPassword")
+                Password = Environment.GetEnvironmentVariable("SentinelPassword"),
+				Cache = new SqliteObjectCache() { ApplicationName="Sentinel" }
             };
             var t = await r.GetBearerAuthenticator();
 	    

@@ -13,9 +13,23 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sentinel.Core", "Sentinel.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve", "..\..\Eve.NET\Eve\Eve.csproj", "{DD88D007-AD10-470D-9C89-AA8EE39857D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.iOS", "..\SimpleCache\SimpleCache.iOS\SimpleCache.iOS.csproj", "{AECC0B9C-1E6F-47ED-9A52-C572039A804E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache", "..\SimpleCache\SimpleCache\SimpleCache.csproj", "{C4CBE63F-2EB6-404F-9CF2-44FBF42E35E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel", "Sentinel\Sentinel.csproj", "{C587A81C-22F9-4804-A529-424BC522AA88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iOS", "iOS", "{F3B1B2E3-5264-454E-8185-C9D6A5AC8669}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net4", "Net4", "{0AA1C515-35F3-413A-B732-06B40A93ECED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portable", "Portable", "{7E3950AF-3398-46A9-A6FC-81908F5D050C}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Sentinel.Core\Sentinel.Core.projitems*{7b92bd8d-8b7c-483c-9f8a-745ca34e8969}*SharedItemsImports = 13
+		Sentinel.Core\Sentinel.Core.projitems*{c587a81c-22f9-4804-a529-424bc522aa88}*SharedItemsImports = 4
+		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{c4cbe63f-2eb6-404f-9cf2-44fbf42e35e2}*SharedItemsImports = 4
 		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{5a320348-7ae0-421a-b3ec-25ff8fed4243}*SharedItemsImports = 4
 		Sentinel.Core\Sentinel.Core.projitems*{69b58df3-d1f5-40fe-8c1e-f133b7b3b6b6}*SharedItemsImports = 4
 	EndGlobalSection
@@ -40,8 +54,28 @@ Global
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4CBE63F-2EB6-404F-9CF2-44FBF42E35E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4CBE63F-2EB6-404F-9CF2-44FBF42E35E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4CBE63F-2EB6-404F-9CF2-44FBF42E35E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4CBE63F-2EB6-404F-9CF2-44FBF42E35E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6} = {0AA1C515-35F3-413A-B732-06B40A93ECED}
+		{5A320348-7AE0-421A-B3EC-25FF8FED4243} = {0AA1C515-35F3-413A-B732-06B40A93ECED}
+		{DD88D007-AD10-470D-9C89-AA8EE39857D0} = {7E3950AF-3398-46A9-A6FC-81908F5D050C}
+		{AECC0B9C-1E6F-47ED-9A52-C572039A804E} = {F3B1B2E3-5264-454E-8185-C9D6A5AC8669}
+		{C4CBE63F-2EB6-404F-9CF2-44FBF42E35E2} = {7E3950AF-3398-46A9-A6FC-81908F5D050C}
+		{C587A81C-22F9-4804-A529-424BC522AA88} = {7E3950AF-3398-46A9-A6FC-81908F5D050C}
 	EndGlobalSection
 EndGlobal
