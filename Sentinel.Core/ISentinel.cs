@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Eve.Authenticators;
 
 namespace Amica.vNext
@@ -11,6 +12,7 @@ namespace Amica.vNext
 		string Password { get; set; }
 		string ClientId { get; set; }
 		string TokenUrl { get; set; }
+		Uri  BaseAddress { get; set; }
 		SqliteObjectCacheBase Cache { get; set; }
     }
 }

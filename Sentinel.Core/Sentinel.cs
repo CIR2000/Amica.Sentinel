@@ -18,6 +18,16 @@ namespace Amica.vNext
             BaseAddress = new Uri("https://10.0.2.2:8000");
         }
 
+		/// <summary>
+        /// Override this to implement platform-specific handlers,
+        /// such as HttpModernClient on iOS/Android.
+        /// </summary>
+        /// <returns></returns>
+        protected virtual HttpClient GetHttpClient()
+        {
+            return new HttpClient();
+        }
+
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
             var token = await GetBearerToken(forceRefresh);
@@ -34,15 +44,16 @@ namespace Amica.vNext
             {
                 try
                 {
-                    Token = await Cache.Get<Token>(Username);
+                    Token = await Cache.Get<Token>(Username).ConfigureAwait(false);
                     if (!Token.Expired)
                         return Token;
                 }
                 catch (KeyNotFoundException) { }
             }
 
-            using (var client = new HttpClient { BaseAddress = BaseAddress })
+            using (var client = GetHttpClient())
             {
+                client.BaseAddress = BaseAddress;
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
@@ -62,6 +73,7 @@ namespace Amica.vNext
 
                 await Cache.Insert(Username, Token, Token.ExpiresAt);
             }
+
             return Token;
         }
 
