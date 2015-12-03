@@ -28,10 +28,14 @@ namespace Amica.vNext
             return new HttpClient();
         }
 
+        public async Task InvalidateUser(string username)
+        {
+            await Cache.Invalidate<Token>(username);
+        }
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
             var token = await GetBearerToken(forceRefresh);
-            return token == null ? null : new BearerAuthenticator(token.AccessToken);
+            return token != null ? new BearerAuthenticator(token.AccessToken) : null;
         }
         public async Task<Token> GetBearerToken(bool forceRefresh = false)
         {

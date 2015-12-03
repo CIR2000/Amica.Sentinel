@@ -8,6 +8,7 @@ namespace Amica.vNext
     {
         Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false);
         Task<Token> GetBearerToken(bool forceRefresh = false);
+        Task InvalidateUser(string username);
 		string Username { get; set; }
 		string Password { get; set; }
 		string ClientId { get; set; }
