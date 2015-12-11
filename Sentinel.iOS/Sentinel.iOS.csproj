@@ -81,15 +81,8 @@
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
-    <ProjectReference Include="..\..\SimpleCache\SimpleCache\SimpleCache.csproj">
-      <Project>{c4cbe63f-2eb6-404f-9cf2-44fbf42e35e2}</Project>
-      <Name>SimpleCache</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sentinel\Sentinel.csproj">
-      <Project>{c587a81c-22f9-4804-a529-424bc522aa88}</Project>
-      <Name>Sentinel</Name>
-    </ProjectReference>
   </ItemGroup>
+  <Import Project="..\Sentinel.Core\Sentinel.Core.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

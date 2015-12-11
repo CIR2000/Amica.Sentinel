@@ -34,7 +34,7 @@ namespace Amica.vNext
         }
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
-            var token = await GetBearerToken(forceRefresh);
+            var token = await GetBearerToken(forceRefresh).ConfigureAwait(false);
             return token != null ? new BearerAuthenticator(token.AccessToken) : null;
         }
         public async Task<Token> GetBearerToken(bool forceRefresh = false)
