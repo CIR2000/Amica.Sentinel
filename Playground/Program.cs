@@ -1,5 +1,4 @@
-﻿using Nito.AsyncEx;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Amica.vNext;
 namespace Playground
@@ -10,7 +9,7 @@ namespace Playground
         {
             try
             {
-                AsyncContext.Run(() => Test());
+                Test().Wait();
             }
             catch (Exception ex)
             {
