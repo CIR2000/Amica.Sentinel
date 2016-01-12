@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{06452EC6-49E5-44B4-860B-5B2FA527D49D}"
 EndProject
@@ -31,11 +31,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel.Net45", "Sentinel.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.Net45", "..\SimpleCache\SimpleCache.Net45\SimpleCache.Net45.csproj", "{0B199775-AA32-4673-8C1F-9EC88754D751}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel", "Sentinel\Sentinel.csproj", "{0E7A05AF-D125-4197-B82C-542229BDA3AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache", "..\SimpleCache\SimpleCache\SimpleCache.csproj", "{19CABCAD-C5AD-4008-A4C0-152775CB58AF}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Sentinel.Core\Sentinel.Core.projitems*{dca6a1db-0902-4d7a-9847-517164f93b61}*SharedItemsImports = 4
 		Sentinel.Core\Sentinel.Core.projitems*{7b92bd8d-8b7c-483c-9f8a-745ca34e8969}*SharedItemsImports = 13
+		Sentinel.Core\Sentinel.Core.projitems*{0e7a05af-d125-4197-b82c-542229bda3ac}*SharedItemsImports = 4
 		..\..\Eve.NET\Eve.Core\Eve.Core.projitems*{c5dead7a-1511-4516-9334-420ce21d3dc8}*SharedItemsImports = 4
+		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{19cabcad-c5ad-4008-a4c0-152775cb58af}*SharedItemsImports = 4
 		..\..\Eve.NET\Eve.Core\Eve.Core.projitems*{dd88d007-ad10-470d-9c89-aa8ee39857d0}*SharedItemsImports = 4
 		Sentinel.Core\Sentinel.Core.projitems*{3ff512a5-5ea5-4168-969b-6348de6df743}*SharedItemsImports = 4
 		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{5a320348-7ae0-421a-b3ec-25ff8fed4243}*SharedItemsImports = 4
@@ -84,6 +90,14 @@ Global
 		{0B199775-AA32-4673-8C1F-9EC88754D751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B199775-AA32-4673-8C1F-9EC88754D751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B199775-AA32-4673-8C1F-9EC88754D751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,5 +111,6 @@ Global
 		{C5DEAD7A-1511-4516-9334-420CE21D3DC8} = {0AA1C515-35F3-413A-B732-06B40A93ECED}
 		{DCA6A1DB-0902-4D7A-9847-517164F93B61} = {B228B5B5-DADF-4EC2-8446-AD3760E03CF5}
 		{0B199775-AA32-4673-8C1F-9EC88754D751} = {B228B5B5-DADF-4EC2-8446-AD3760E03CF5}
+		{19CABCAD-C5AD-4008-A4C0-152775CB58AF} = {7E3950AF-3398-46A9-A6FC-81908F5D050C}
 	EndGlobalSection
 EndGlobal
