@@ -63,9 +63,13 @@
       <Project>{0b199775-aa32-4673-8c1f-9ec88754d751}</Project>
       <Name>SimpleCache.Net45</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Sentinel.Net45\Sentinel.Net45.csproj">
-      <Project>{dca6a1db-0902-4d7a-9847-517164f93b61}</Project>
-      <Name>Sentinel.Net45</Name>
+    <ProjectReference Include="..\..\SimpleCache\SimpleCache\SimpleCache.csproj">
+      <Project>{19cabcad-c5ad-4008-a4c0-152775cb58af}</Project>
+      <Name>SimpleCache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sentinel\Sentinel.csproj">
+      <Project>{0e7a05af-d125-4197-b82c-542229bda3ac}</Project>
+      <Name>Sentinel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
