@@ -14,6 +14,6 @@ namespace Amica.vNext
 		string ClientId { get; set; }
 		string TokenUrl { get; set; }
 		Uri  BaseAddress { get; set; }
-		SqliteObjectCacheBase Cache { get; set; }
+		IBulkObjectCache LocalCache { get; set; }
     }
 }

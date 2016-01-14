@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Threading.Tasks;
 using System.Net.Http;
@@ -30,7 +31,7 @@ namespace Amica.vNext
 
         public async Task InvalidateUser(string username)
         {
-            await Cache.Invalidate<Token>(username);
+            await LocalCache.Invalidate<Token>(username).ConfigureAwait(false);
         }
         public async Task<BearerAuthenticator> GetBearerAuthenticator(bool forceRefresh = false)
         {
@@ -48,7 +49,7 @@ namespace Amica.vNext
             {
                 try
                 {
-                    Token = await Cache.Get<Token>(Username).ConfigureAwait(false);
+                    Token = await LocalCache.Get<Token>(Username).ConfigureAwait(false);
                     if (!Token.Expired)
                         return Token;
                 }
@@ -71,11 +72,11 @@ namespace Amica.vNext
                 HttpResponse = await client.PostAsync(TokenUrl, content).ConfigureAwait(false);
                 if (HttpResponse.StatusCode != HttpStatusCode.OK) return Token;
 
-                var json = await HttpResponse.Content.ReadAsStringAsync();
+                var json = await HttpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 Token = JsonConvert.DeserializeObject<Token>(json);
                 Token.Username = Username;
 
-                await Cache.Insert(Username, Token, Token.ExpiresAt);
+                await LocalCache.Insert(Username, Token, Token.ExpiresAt).ConfigureAwait(false);
             }
 
             return Token;
@@ -83,8 +84,8 @@ namespace Amica.vNext
 
         private void Validate()
         {
-            if (Cache == null)
-                throw new ArgumentNullException(nameof(Cache));
+            if (LocalCache == null)
+                throw new ArgumentNullException(nameof(LocalCache));
             if (TokenUrl == null)
                 throw new ArgumentNullException(nameof(TokenUrl));
             if (Username == null)
@@ -103,6 +104,6 @@ namespace Amica.vNext
         public string GrantType => "password";
         public Token Token { get; internal set; }
         public string TokenUrl { get; set; } = "/oauth/token";
-        public SqliteObjectCacheBase Cache { get; set; }
+        public IBulkObjectCache LocalCache { get; set; }
     }
 }
