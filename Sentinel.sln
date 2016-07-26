@@ -1,38 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground", "Playground\Playground.csproj", "{06452EC6-49E5-44B4-860B-5B2FA527D49D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel.Net4", "Sentinel.Net4\Sentinel.Net4.csproj", "{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.Net4", "..\SimpleCache\SimpleCache.Net4\SimpleCache.Net4.csproj", "{5A320348-7AE0-421A-B3EC-25FF8FED4243}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sentinel.Core", "Sentinel.Core\Sentinel.Core.shproj", "{7B92BD8D-8B7C-483C-9F8A-745CA34E8969}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve", "..\..\Eve.NET\Eve\Eve.csproj", "{DD88D007-AD10-470D-9C89-AA8EE39857D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Net4", "Net4", "{0AA1C515-35F3-413A-B732-06B40A93ECED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eve.Net4", "..\..\Eve.NET\Eve.Net4\Eve.Net4.csproj", "{C5DEAD7A-1511-4516-9334-420CE21D3DC8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache.Net45", "..\SimpleCache\SimpleCache.Net45\SimpleCache.Net45.csproj", "{0B199775-AA32-4673-8C1F-9EC88754D751}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel", "Sentinel\Sentinel.csproj", "{0E7A05AF-D125-4197-B82C-542229BDA3AC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCache", "..\SimpleCache\SimpleCache\SimpleCache.csproj", "{19CABCAD-C5AD-4008-A4C0-152775CB58AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sentinel", "Sentinel\Sentinel.csproj", "{C587A81C-22F9-4804-A529-424BC522AA88}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Sentinel.Core\Sentinel.Core.projitems*{7b92bd8d-8b7c-483c-9f8a-745ca34e8969}*SharedItemsImports = 13
-		Sentinel.Core\Sentinel.Core.projitems*{0e7a05af-d125-4197-b82c-542229bda3ac}*SharedItemsImports = 4
-		..\..\Eve.NET\Eve.Core\Eve.Core.projitems*{c5dead7a-1511-4516-9334-420ce21d3dc8}*SharedItemsImports = 4
-		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{19cabcad-c5ad-4008-a4c0-152775cb58af}*SharedItemsImports = 4
-		..\..\Eve.NET\Eve.Core\Eve.Core.projitems*{dd88d007-ad10-470d-9c89-aa8ee39857d0}*SharedItemsImports = 4
-		..\SimpleCache\SimpleCache.Core\SimpleCache.Core.projitems*{5a320348-7ae0-421a-b3ec-25ff8fed4243}*SharedItemsImports = 4
-		Sentinel.Core\Sentinel.Core.projitems*{69b58df3-d1f5-40fe-8c1e-f133b7b3b6b6}*SharedItemsImports = 4
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -42,41 +19,16 @@ Global
 		{06452EC6-49E5-44B4-860B-5B2FA527D49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06452EC6-49E5-44B4-860B-5B2FA527D49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06452EC6-49E5-44B4-860B-5B2FA527D49D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A320348-7AE0-421A-B3EC-25FF8FED4243}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD88D007-AD10-470D-9C89-AA8EE39857D0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C5DEAD7A-1511-4516-9334-420CE21D3DC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5DEAD7A-1511-4516-9334-420CE21D3DC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5DEAD7A-1511-4516-9334-420CE21D3DC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5DEAD7A-1511-4516-9334-420CE21D3DC8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B199775-AA32-4673-8C1F-9EC88754D751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B199775-AA32-4673-8C1F-9EC88754D751}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B199775-AA32-4673-8C1F-9EC88754D751}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B199775-AA32-4673-8C1F-9EC88754D751}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0E7A05AF-D125-4197-B82C-542229BDA3AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19CABCAD-C5AD-4008-A4C0-152775CB58AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C587A81C-22F9-4804-A529-424BC522AA88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{69B58DF3-D1F5-40FE-8C1E-F133B7B3B6B6} = {0AA1C515-35F3-413A-B732-06B40A93ECED}
-		{5A320348-7AE0-421A-B3EC-25FF8FED4243} = {0AA1C515-35F3-413A-B732-06B40A93ECED}
-		{C5DEAD7A-1511-4516-9334-420CE21D3DC8} = {0AA1C515-35F3-413A-B732-06B40A93ECED}
 	EndGlobalSection
 EndGlobal

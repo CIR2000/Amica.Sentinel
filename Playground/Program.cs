@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Amica.vNext;
+using SimpleObjectCache;
+
 namespace Playground
 {
     class Program
@@ -30,7 +32,7 @@ namespace Playground
                 ClientId = Environment.GetEnvironmentVariable("SentinelClientId"),
                 Username = Environment.GetEnvironmentVariable("SentinelUsername"),
                 Password = Environment.GetEnvironmentVariable("SentinelPassword"),
-				Cache = new SqliteObjectCache() { ApplicationName="Sentinel" }
+				LocalCache = new SqliteObjectCache() { ApplicationName="Sentinel" }
             };
             var t = await r.GetBearerAuthenticator();
 	    
