@@ -6,8 +6,8 @@
     <title>Amica.Sentinel</title>
     <authors>Nicola Iarocci</authors>
     <owners>CIR 2000</owners>
-    <licenseUrl>https://github.com/CIR2000/Amica.vNext.Sentinel/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/CIR2000/Amica.vNext.Sentinel</projectUrl>
+    <licenseUrl>https://github.com/CIR2000/Amica.Sentinel/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/CIR2000/Amica.Sentinel</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Authentication service for the Amica platform</description>
     <copyright>Copyright 2016 CIR 2000</copyright>
