@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Amica.vNext
+namespace Amica.Sentinel
 {
     public class Token
     {

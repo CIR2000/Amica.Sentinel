@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 using Eve.Authenticators;
 using SimpleObjectCache;
 
-namespace Amica.vNext
+namespace Amica.Sentinel
 {
 
     // TODO IDisposable.

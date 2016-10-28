@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Amica.vNext;
+using Amica.Sentinel;
 using SimpleObjectCache;
 
 namespace Playground

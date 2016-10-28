@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Eve.Authenticators;
 using SimpleObjectCache;
 
-namespace Amica.vNext
+namespace Amica.Sentinel
 {
     public interface ISentinel
     {
