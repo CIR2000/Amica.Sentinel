@@ -85,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sentinel\Sentinel.csproj">
-      <Project>{0e7a05af-d125-4197-b82c-542229bda3ac}</Project>
+      <Project>{eeddd90e-9666-4eb2-afed-708d68e221b4}</Project>
       <Name>Sentinel</Name>
     </ProjectReference>
   </ItemGroup>
