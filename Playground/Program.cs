@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Amica.Sentinel;
 using SimpleObjectCache;
+using System.IO;
 
 namespace Playground
 {
@@ -21,18 +22,24 @@ namespace Playground
 
         private static async Task Test()
         {
+            var expectedDatabasePath = Path.Combine(
+                Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "test"));
+
+            Directory.CreateDirectory(expectedDatabasePath);
+
+            var db = Path.Combine(expectedDatabasePath, "SimpleObjectCache.db");
             var r = new Sentinel()
             {
                 // Unless a valid SSL certificate is installed, we 
                 // need Fiddler running with Decrypt HTTPS option active, 
                 // see http://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS
-                
+
                 // these are test values only valid on my local machine.
                 // have fun using them on a live system.
                 ClientId = Environment.GetEnvironmentVariable("SentinelClientId"),
                 Username = Environment.GetEnvironmentVariable("SentinelUsername"),
                 Password = Environment.GetEnvironmentVariable("SentinelPassword"),
-				LocalCache = new SqliteObjectCache() { ApplicationName="Sentinel" }
+				LocalCache = new SqliteObjectCache() { DatabasePath=db }
             };
             var t = await r.GetBearerAuthenticator();
 	    
